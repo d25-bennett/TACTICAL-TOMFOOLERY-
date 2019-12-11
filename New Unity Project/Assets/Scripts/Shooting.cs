@@ -22,6 +22,9 @@ public class Shooting : MonoBehaviour
             PrefabShot = (Rigidbody)Instantiate(projectile, Spawn.position, projectile.rotation);
 
             PrefabShot.velocity = Spawn.TransformDirection(Vector3.forward * 40);
+
+            Destroy(PrefabShot, 2);
         }
+        
     }
 }
