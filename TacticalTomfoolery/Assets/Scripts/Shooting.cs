@@ -6,6 +6,8 @@ public class Shooting : MonoBehaviour
 {
     public Rigidbody projectile;
     public Transform Spawn;
+    public float speed = 30f;
+
 
     // Use this for initialization
     void Start()
@@ -21,7 +23,7 @@ public class Shooting : MonoBehaviour
             Rigidbody PrefabShot;
             PrefabShot = (Rigidbody)Instantiate(projectile, Spawn.position, projectile.rotation);
 
-            PrefabShot.velocity = Spawn.TransformDirection(Vector3.forward * 40);
+            PrefabShot.velocity = Spawn.TransformDirection(Vector3.forward * speed);
 
             Destroy(PrefabShot, 2);
         }
