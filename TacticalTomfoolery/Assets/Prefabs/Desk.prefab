@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 289018219848185474}
   - component: {fileID: 289018219848185492}
   - component: {fileID: 289018219848185483}
+  - component: {fileID: 7679802060291008533}
   - component: {fileID: 289018219848185482}
   - component: {fileID: 289018219848185481}
   - component: {fileID: 289018219848185480}
   - component: {fileID: 289018219848185487}
-  - component: {fileID: 289018219848185486}
   - component: {fileID: 289018219848185485}
   - component: {fileID: 289018219848185484}
   - component: {fileID: 289018219848185475}
@@ -86,6 +86,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7679802060291008533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289018219848185473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018219848185481}
+  m_materialColorField: 
 --- !u!54 &289018219848185482
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -100,8 +119,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!65 &289018219848185481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -141,24 +160,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.26767, y: 656.89056, z: 5.7637215}
   m_Center: {x: -0.035369772, y: 273.44226, z: -47.11809}
---- !u!114 &289018219848185486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289018219848185473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018219848185481}
 --- !u!65 &289018219848185485
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,11 +210,11 @@ GameObject:
   - component: {fileID: 289018219957284714}
   - component: {fileID: 289018219957284732}
   - component: {fileID: 289018219957284723}
+  - component: {fileID: 879814438250862401}
   - component: {fileID: 289018219957284722}
   - component: {fileID: 289018219957284721}
   - component: {fileID: 289018219957284720}
   - component: {fileID: 289018219957284727}
-  - component: {fileID: 289018219957284726}
   - component: {fileID: 289018219957284725}
   - component: {fileID: 289018219957284724}
   - component: {fileID: 289018219957284715}
@@ -284,6 +285,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &879814438250862401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289018219957284713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018219957284721}
+  m_materialColorField: 
 --- !u!54 &289018219957284722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,8 +318,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!65 &289018219957284721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -339,24 +359,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.26767, y: 656.89056, z: 5.7637215}
   m_Center: {x: -0.035369772, y: 273.44226, z: -47.11809}
---- !u!114 &289018219957284726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289018219957284713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018219957284721}
 --- !u!65 &289018219957284725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -407,11 +409,11 @@ GameObject:
   - component: {fileID: 289018220452206401}
   - component: {fileID: 289018220452206411}
   - component: {fileID: 289018220452206410}
+  - component: {fileID: 5603407077588809990}
   - component: {fileID: 289018220452206409}
   - component: {fileID: 289018220452206408}
   - component: {fileID: 289018220452206415}
   - component: {fileID: 289018220452206414}
-  - component: {fileID: 289018220452206413}
   - component: {fileID: 289018220452206412}
   - component: {fileID: 289018220452206403}
   - component: {fileID: 289018220452206402}
@@ -482,6 +484,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5603407077588809990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289018220452206400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018220452206408}
+  m_materialColorField: 
 --- !u!54 &289018220452206409
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -496,8 +517,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!65 &289018220452206408
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -537,24 +558,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.26767, y: 656.89056, z: 5.7637215}
   m_Center: {x: -0.035369772, y: 273.44226, z: -47.11809}
---- !u!114 &289018220452206413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289018220452206400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018220452206408}
 --- !u!65 &289018220452206412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -605,11 +608,11 @@ GameObject:
   - component: {fileID: 289018220515281625}
   - component: {fileID: 289018220515281571}
   - component: {fileID: 289018220515281570}
+  - component: {fileID: 5926494898028361821}
   - component: {fileID: 289018220515281569}
   - component: {fileID: 289018220515281568}
   - component: {fileID: 289018220515281575}
   - component: {fileID: 289018220515281574}
-  - component: {fileID: 289018220515281573}
   - component: {fileID: 289018220515281572}
   - component: {fileID: 289018220515281627}
   - component: {fileID: 289018220515281626}
@@ -680,6 +683,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5926494898028361821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289018220515281624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018220515281568}
+  m_materialColorField: 
 --- !u!54 &289018220515281569
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -694,8 +716,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!65 &289018220515281568
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -735,24 +757,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.26767, y: 656.89056, z: 5.7637215}
   m_Center: {x: -0.035369772, y: 273.44226, z: -47.11809}
---- !u!114 &289018220515281573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289018220515281624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018220515281568}
 --- !u!65 &289018220515281572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -803,6 +807,7 @@ GameObject:
   - component: {fileID: 289018220717919863}
   - component: {fileID: 289018220717919865}
   - component: {fileID: 289018220717919864}
+  - component: {fileID: 3179119995219653316}
   - component: {fileID: 289018220717919871}
   - component: {fileID: 289018220717919870}
   - component: {fileID: 289018220717919869}
@@ -810,7 +815,6 @@ GameObject:
   - component: {fileID: 289018220717919858}
   - component: {fileID: 289018220717919857}
   - component: {fileID: 289018220717919856}
-  - component: {fileID: 289018220717919859}
   m_Layer: 0
   m_Name: Draw1 (3)
   m_TagString: Untagged
@@ -878,6 +882,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3179119995219653316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289018220717919862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018220717919870}
+  m_materialColorField: 
 --- !u!54 &289018220717919871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -892,8 +915,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!65 &289018220717919870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -972,24 +995,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100.31765, y: 96.58009, z: 94.18723}
   m_Center: {x: -0.1147134, y: -7.90172, z: -2.9063597}
---- !u!114 &289018220717919859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289018220717919862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018220717919870}
 --- !u!1 &1458268306799435438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,8 +1269,8 @@ GameObject:
   - component: {fileID: 4792396605262138558}
   - component: {fileID: 5265723360838136413}
   - component: {fileID: 4072439112029086219}
+  - component: {fileID: 2853682532875266897}
   - component: {fileID: 289018219536527504}
-  - component: {fileID: 289018219536527509}
   - component: {fileID: 289018219536527499}
   - component: {fileID: 5038395933020082005}
   - component: {fileID: 5038395933020082004}
@@ -1339,6 +1344,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2853682532875266897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038395933020081994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1a7708e76601b4ea829921c33bc624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints:
+  - {fileID: 289018219536527499}
+  m_materialColorField: 
 --- !u!54 &289018219536527504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1354,25 +1378,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 96
-  m_CollisionDetection: 0
---- !u!114 &289018219536527509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5038395933020081994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 289018219536527499}
+  m_CollisionDetection: 1
 --- !u!65 &289018219536527499
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1476,7 +1482,7 @@ Transform:
   m_GameObject: {fileID: 8584742270208980276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2347789117292326132}
   - {fileID: 4792396605262138558}
