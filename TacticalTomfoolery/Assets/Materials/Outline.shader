@@ -11,71 +11,74 @@
 		CGINCLUDE
 #include "UnityCG.cginc"
 
-			struct appdata
-		{
-			float4 vertex : POSITION;
-			float3 normal : NORMAL;
-		};
+	struct appdata
+	{
+		float4 vertex : POSITION;
+		float3 normal : NORMAL;
+	};
 
-		struct v2f
-		{
-			float4 pos : POSITION;
-			//		float4 color : COLOR;
-			float3 normal: NORMAL;
-		};
+	struct v2f
+	{
+		float4 pos : POSITION;
+		//		float4 color : COLOR;
+		float3 normal: NORMAL;
+	};
 
 		float _OutlineWidth;
 		float4 _OutlineColor;
 	
 		v2f vert(appdata v)
-		{
-			v.vertex.xyz *= _OutlineWidth;
-			v2f o;
-			o.pos = UnityObjectToClipPos(v.vertex);
-			//o.color = _OutlineColor;
-			return o;
-		}
+
+	{
+		v.vertex.xyz *= _OutlineWidth;
+		v2f o;
+		o.pos = UnityObjectToClipPos(v.vertex);
+		//o.color = _OutlineColor;
+		return o;
+	}
 
 		ENDCG
 
-			SubShader
+	SubShader
+	{
+		Tags{"Queue" = "Transparent+1"} //Mess with to optimize
+		Pass //Outline
+		
 		{
-			Tags{"Queue" = "Transparent+1"} //Mess with to optimize
-			Pass //Outline
-			{
 			ZWrite Off
-
 			CGPROGRAM
-	#pragma vertex vert
-	#pragma fragment frag
+			#pragma vertex vert
+			#pragma fragment frag
 
 			half4 frag(v2f i) : COLOR
-		{
-		return _OutlineColor;
-	}
+			{
+				return _OutlineColor;
+			}
 
 
-		ENDCG
+			ENDCG
 		}
-		Pass //normal render
+			Pass //normal render
+		
 		{
-		ZWrite On
+			ZWrite On
+			Material 
+			{
+				Diffuse[_Color]
+				Ambient[_Color]
+			}
 
-		Material 
-	{
-		Diffuse[_Color]
-		Ambient[_Color]
-	}
+				Lighting On
 
-		Lighting On
+				SetTexture[_MainTex]
+			{
+				ConstantColor[_Color]
+			}
 
-		SetTexture[_MainTex]
-	{
-		ConstantColor[_Color]
-	}
-		SetTexture[_MainTex]{
-		Combine previous * primary DOUBLE
-}
+			SetTexture[_MainTex]
+			{
+				Combine previous * primary DOUBLE
+			}
 		}
 	}
 }
