@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.017265823, g: 0.037191074, b: 0.035541035, a: 1}
+  m_IndirectSpecularColor: {r: 0.014879456, g: 0.04099963, b: 0.030023072, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -632,6 +632,11 @@ PrefabInstance:
       propertyPath: m_snapOffset
       value: 
       objectReference: {fileID: 4064304113749341139}
+    - target: {fileID: 3622287636694806395, guid: ab6d5e59f1716bf41b5432de765ceae3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab6d5e59f1716bf41b5432de765ceae3, type: 3}
 --- !u!1001 &2941274504132948987
@@ -808,17 +813,17 @@ PrefabInstance:
     - target: {fileID: 4364965607387927604, guid: ba9e257a7c0a46247a20d84f7906c502,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.52
+      value: -0.077
       objectReference: {fileID: 0}
     - target: {fileID: 4364965607387927604, guid: ba9e257a7c0a46247a20d84f7906c502,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.26
+      value: 1.539
       objectReference: {fileID: 0}
     - target: {fileID: 4364965607387927604, guid: ba9e257a7c0a46247a20d84f7906c502,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.26
+      value: 0.166
       objectReference: {fileID: 0}
     - target: {fileID: 4364965607387927604, guid: ba9e257a7c0a46247a20d84f7906c502,
         type: 3}
@@ -865,9 +870,19 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4364965607401831890, guid: ba9e257a7c0a46247a20d84f7906c502,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4364965607387532982, guid: ba9e257a7c0a46247a20d84f7906c502,
         type: 3}
       propertyPath: EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364965607394541048, guid: ba9e257a7c0a46247a20d84f7906c502,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
