@@ -186,6 +186,8 @@ namespace OculusSampleFramework
                 }
 
             }
+                            m_parentHeldObject = true;
+
         }
 
         protected override void MoveGrabbedObject(Vector3 pos, Quaternion rot, bool forceTeleport = false)
