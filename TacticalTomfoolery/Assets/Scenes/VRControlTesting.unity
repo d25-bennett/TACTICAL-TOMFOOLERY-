@@ -647,11 +647,6 @@ PrefabInstance:
       propertyPath: m_snapOffset
       value: 
       objectReference: {fileID: 4064304113749341139}
-    - target: {fileID: 3622287636694806395, guid: ab6d5e59f1716bf41b5432de765ceae3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab6d5e59f1716bf41b5432de765ceae3, type: 3}
 --- !u!1001 &2941274504132948987
