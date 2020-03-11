@@ -10,15 +10,17 @@ public class SimpleShoot : MonoBehaviour
     public GameObject muzzleFlashPrefab;
     public Transform barrelLocation;
     public Transform casingExitLocation;
+	public AudioSource audioData;
 
 
-    public float shotPower = 100f;
+	public float shotPower = 100f;
 
     void Start()
     {
         if (barrelLocation == null)
             barrelLocation = transform;
-    }
+		audioData = GetComponent<AudioSource>();
+	}
 
     public void TriggerShoot()
     {
@@ -32,13 +34,15 @@ public class SimpleShoot : MonoBehaviour
         // bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
 
         GameObject tempFlash;
-       Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-       tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+        Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+        tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
-       // Destroy(tempFlash, 0.5f);
-        //  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
-       
-    }
+		audioData.Play(0);
+
+		// Destroy(tempFlash, 0.5f);
+		//  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
+
+	}
 
     void CasingRelease()
     {

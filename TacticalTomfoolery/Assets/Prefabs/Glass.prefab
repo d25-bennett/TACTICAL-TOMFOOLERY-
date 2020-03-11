@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa4d0f5b6d142144a6d09d16ab5d1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenGlass: {fileID: 2484262079412184353, guid: f6a5d07ba251e274185404bd9b51fef8,
+  brokenGlass: {fileID: 8978039767792421386, guid: f6a5d07ba251e274185404bd9b51fef8,
     type: 3}
   magnitudeCol: 10
   radius: 4
   power: 5
   upwards: 3
+  audioData: {fileID: 9027998075575509541, guid: c7832a1086f155649815de0902a89996,
+    type: 3}
