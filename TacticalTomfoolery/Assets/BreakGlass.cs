@@ -11,8 +11,8 @@ public class BreakGlass : MonoBehaviour
 	{
 		if (collision.relativeVelocity.magnitude > magnitudeCol)
 		{
-			Destroy(gameObject);
-			Instantiate(brokenGlass, transform.position, transform.rotation);
+            Instantiate(brokenGlass, transform.position, transform.rotation);
+            Destroy(gameObject);
 			//brokenGlass.localScale = transform.position;
 			//Vector3 explosionPos = transform.position;
 			//Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
