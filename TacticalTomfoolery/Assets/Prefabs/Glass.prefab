@@ -111,3 +111,5 @@ MonoBehaviour:
   radius: 4
   power: 5
   upwards: 3
+  audioData: {fileID: 9027998075575509541, guid: c7832a1086f155649815de0902a89996,
+    type: 3}
