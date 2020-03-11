@@ -7,9 +7,9 @@ public class BreakGlass : MonoBehaviour
 	public GameObject brokenGlass;
 	public float magnitudeCol, radius, power, upwards;
 
-	private void OnCollisionEnter(Collision collision)
+	private void OnTriggerEnter(Collider other)
 	{
-		if (collision.relativeVelocity.magnitude > magnitudeCol)
+		if (other.tag == "bullet")
 		{
 			Destroy(gameObject);
 			Instantiate(brokenGlass, transform.position, transform.rotation);
