@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - boom
+  - ExcludeTeleport
+  - TeleportIgnore
+  - yes
+  - no
   layers:
   - Default
   - TransparentFX
