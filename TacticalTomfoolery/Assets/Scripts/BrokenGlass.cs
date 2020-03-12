@@ -17,7 +17,7 @@ public class BrokenGlass : MonoBehaviour
     {
 		if (time <= 0)
 		{
-			Destroy(this);
+			Destroy(gameObject);
 		}
 		else
 		{
