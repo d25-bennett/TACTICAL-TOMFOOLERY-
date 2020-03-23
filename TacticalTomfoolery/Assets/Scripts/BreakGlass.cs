@@ -20,7 +20,7 @@ public class BreakGlass : MonoBehaviour
 		{
 			Destroy(gameObject);
 			Instantiate(brokenGlass, transform.position, transform.rotation);
-			audioSource.PlayOneShot(smash, 0.3f);
+			audioSource.PlayOneShot(smash, 0.8f);
 		}
 	}
 }
