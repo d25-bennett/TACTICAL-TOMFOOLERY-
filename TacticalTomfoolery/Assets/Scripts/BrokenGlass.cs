@@ -19,7 +19,7 @@ public class BrokenGlass : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-		else
+		else if (time > 0)
 		{
 			time -= Time.deltaTime;
 		}
