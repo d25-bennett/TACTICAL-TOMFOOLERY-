@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4660822423036602}
   - component: {fileID: 33178587371735652}
   - component: {fileID: 23112035598563012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol_45mm_Case
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 136132550391131772}
   - component: {fileID: 54736518851447296}
   - component: {fileID: -5686102798684504687}
-  m_Layer: 0
+  - component: {fileID: 7989851446041436030}
+  m_Layer: 8
   m_Name: Bullet_45mm_Casing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,3 +155,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50f0df2d43946346abeebffa856e0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7989851446041436030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482960508195586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
