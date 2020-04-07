@@ -6,31 +6,30 @@ public class KeyScript : MonoBehaviour
 {
 	public GameObject key;
 	public Collider col;
-	public Rigidbody rb;
 	public GameObject crosshair;
+	private OVRGrabbable grab;
 
-	private bool triggered;
+	public bool triggered;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		rb.useGravity = false;
+		grab = GetComponent<OVRGrabbable>();
+		grab.enabled = false;
 		col.enabled = false;
 		crosshair.SetActive(false);
 	}
 
-	private void Update()
-	{
-		key.transform.position = new Vector3 (key.transform.parent.position.x, (key.transform.parent.position.y + 0.0747999f), key.transform.parent.position.z);
-		//key.transform.rotation = Quaternion.Euler(key.transform.parent.rotation.x,key.transform.parent.rotation.y + 90,key.transform.parent.rotation.z);
-	}
-
 	private void OnTriggerEnter(Collider other)
 	{
+		//.Log("Been hit");
 		if (other.tag == "Player" && !triggered)
 		{
+			GameObject myGameObject = new GameObject("Test Object"); // Make a new GO.
+			Rigidbody gameObjectsRigidBody = myGameObject.AddComponent<Rigidbody>(); // Add the rigidbody.
+			gameObjectsRigidBody.mass = 5; // Set the GO's mass to 5 via the Rigidbody.
+			grab.enabled = true;
 			key.transform.parent = null;
-			rb.useGravity = true;
 			col.enabled = true;
 			crosshair.SetActive(true);
 			triggered = true;
