@@ -778,6 +778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookDiff (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -847,6 +852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -1492,6 +1502,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookDiff
       objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1546,6 +1561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -2268,6 +2288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookDiff (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2342,6 +2367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -3344,7 +3374,7 @@ PrefabInstance:
     - target: {fileID: 4338710389231581693, guid: a497872eb34a7464faa23510ec6c542e,
         type: 3}
       propertyPath: CollisionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4338710389231581693, guid: a497872eb34a7464faa23510ec6c542e,
         type: 3}
@@ -3394,6 +3424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookDiff (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
@@ -3465,6 +3500,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.016
       objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
 --- !u!1001 &932472839
@@ -3478,6 +3518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookDiff (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
@@ -3548,6 +3593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -5173,6 +5223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookDiff (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5242,6 +5297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -5931,6 +5991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookDiff (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2057518971150667629, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3086829702800145790, guid: 7978d4563557ebe439ddd33aaa2aa77e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6000,6 +6065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795847133217790147, guid: 7978d4563557ebe439ddd33aaa2aa77e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7978d4563557ebe439ddd33aaa2aa77e, type: 3}
@@ -8040,6 +8110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8125,6 +8200,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &1633845602609719844
@@ -8138,6 +8223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812013851437122947, guid: d8fe99470ece7c643a565080c481be76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7418328077439711120, guid: d8fe99470ece7c643a565080c481be76,
         type: 3}
@@ -10635,6 +10725,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10720,6 +10815,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348695220752296
@@ -10733,6 +10838,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351973622166333933, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7971638451800189587, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
         type: 3}
@@ -10789,15 +10899,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7693080266725469820, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+    - target: {fileID: 4372502080430308433, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7536657653023293834, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693080266725469820, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036996432845948807, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 427090841, guid: 93fa0ec5d5c57ca488f2c423d8045eca, type: 3}
       propertyPath: m_IsTrigger
@@ -10840,6 +10960,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -10926,6 +11051,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348695666925033
@@ -10939,6 +11074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -11025,6 +11165,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348696003192451
@@ -11038,6 +11188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -11124,6 +11279,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348696071511531
@@ -11137,6 +11302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -11223,6 +11393,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348696296493137
@@ -11236,6 +11416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -11322,6 +11507,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.10567
       objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
 --- !u!1001 &3736348696541663731
@@ -11335,6 +11530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Book (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248757078374850603, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5496901019408228857, guid: ebea23660ba24144592cb82301c47f80,
         type: 3}
@@ -11420,6 +11620,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.10567
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995564664594446466, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493458431429963940, guid: ebea23660ba24144592cb82301c47f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea23660ba24144592cb82301c47f80, type: 3}
@@ -16213,7 +16423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 833933353615434365}
   - component: {fileID: 6557882472841779621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bookcolider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18400,7 +18610,7 @@ GameObject:
   - component: {fileID: 9192628650771431162}
   - component: {fileID: 8496976877135737840}
   - component: {fileID: 2804289184565278317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bluebook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
