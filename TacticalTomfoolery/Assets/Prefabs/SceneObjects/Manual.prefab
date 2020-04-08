@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 166400271886763056}
   - component: {fileID: -8954181442873556635}
   m_Layer: 8
-  m_Name: BookDiff
+  m_Name: Manual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 5533734022519543303, guid: 2c455551c37d5e44fafa94d04bfc185d,
         type: 3}
       propertyPath: m_Name
-      value: Crosshair (1)
+      value: Crosshair
       objectReference: {fileID: 0}
     - target: {fileID: 5533734022519543302, guid: 2c455551c37d5e44fafa94d04bfc185d,
         type: 3}
