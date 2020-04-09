@@ -10,9 +10,9 @@ public class ImpactEffect : MonoBehaviour
         impactNoise = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        impactNoise.Play();
+            if (collision.relativeVelocity.magnitude > 2)
+                impactNoise.Play();
     }
 }
