@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7720699604500823164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Books and stuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,6 +897,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 7351973622166333933, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7971638451800189587, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -951,6 +956,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372502080430308433, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036996432845948807, guid: 93fa0ec5d5c57ca488f2c423d8045eca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93fa0ec5d5c57ca488f2c423d8045eca, type: 3}
