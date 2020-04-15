@@ -12,7 +12,7 @@ public class ImpactEffect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-            if (collision.relativeVelocity.magnitude > 2)
+            if (collision.relativeVelocity.magnitude > 2 && collision.gameObject.tag != "boom")
                 impactNoise.Play();
     }
 }

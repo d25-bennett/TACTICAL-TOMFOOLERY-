@@ -5,25 +5,25 @@ using UnityEngine;
 public class Phone : MonoBehaviour
 {
 	public EventManager events;
-	private AudioSource audioSource;
+	private AudioSource audioS;
 	private OVRGrabbable grab;
 	private bool pickedUp;
 
 	private void Start()
 	{
 		grab = GetComponent<OVRGrabbable>();
-		audioSource = GetComponent<AudioSource>();
-		audioSource.Play();
+		audioS = GetComponent<AudioSource>();
+		CallStart();
 	}
 
 	// Update is called once per frame
-	void Update()
+	private void Update()
     {
         if (grab.isGrabbed && !pickedUp)
 		{
 			pickedUp = true;
-			audioSource.Stop();
-			events.names = eventNames.phone;
+			audioS.Stop();
+			events.setEvent(eventNames.phone);
 		}
     }
 
@@ -31,8 +31,13 @@ public class Phone : MonoBehaviour
 	{
 		if (other.tag == "Player")
 		{
-			events.names = eventNames.phone;
+			events.setEvent(eventNames.phone);
 			Destroy(this);
 		}
+	}
+
+	public void CallStart()
+	{
+		audioS.PlayDelayed(4);
 	}
 }

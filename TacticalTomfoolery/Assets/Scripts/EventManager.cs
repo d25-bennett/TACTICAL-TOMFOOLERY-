@@ -4,17 +4,13 @@ using UnityEngine;
 
 public enum eventNames
 {
-	none,
-	phone,
-	gun,
-	glass,
-	key,
-	draw,
+	none, phone, gun, glass,
+	key, draw, vhs,
 }
 
 public class EventManager : MonoBehaviour
 {
-	public eventNames names;
+	private eventNames _names;
 
 	private AudioSource background;
 	private AudioSource voice;
@@ -26,18 +22,29 @@ public class EventManager : MonoBehaviour
 
 	private float timeLeft;
 
+	private float start = 3f;
+	public TitleFade _fade;
+	public Phone _phone;
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
-		names = eventNames.none;
+		_names = eventNames.none;
 		voice = GetComponent<AudioSource>();
 		background = GetComponentInChildren<AudioSource>();
+		StartCoroutine(GameStart());
+	}
+
+	public void setEvent(eventNames names)
+	{
+		_names = names;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if (names != eventNames.none)
+		if (_names != eventNames.none)
 		{
 			narrationSwitch();
 		}
@@ -51,9 +58,18 @@ public class EventManager : MonoBehaviour
 		}
 	}
 
+	IEnumerator GameStart()
+	{
+		yield return new WaitForSeconds(2);
+		StartCoroutine(_fade.FadeTo(1.0f, 1.0f));
+		yield return new WaitForSeconds(5);
+		StartCoroutine(_fade.FadeTo(0f, 1.0f));
+
+	}
+
 	void narrationSwitch()
 	{
-		switch (names)
+		switch (_names)
 		{
 			case eventNames.none:
 				break;
@@ -79,7 +95,7 @@ public class EventManager : MonoBehaviour
 	{
 		Debug.Log("Playing: " + clip.name);
 		voice.PlayOneShot(clip);
-		names = eventNames.none;
+		_names = eventNames.none;
 		timeLeft = clip.length;
 	}
 }

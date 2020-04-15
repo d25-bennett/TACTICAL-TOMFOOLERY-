@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1456489432719899954}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,8 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 5036996432845948807}
-  col: {fileID: 8612639186623773647}
-  crosshair: {fileID: 7693080266725469820}
   triggered: 0
 --- !u!82 &-5125157271864658438
 AudioSource:
@@ -418,12 +416,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c455551c37d5e44fafa94d04bfc185d, type: 3}
---- !u!1 &7693080266725469820 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5533734022519543303, guid: 2c455551c37d5e44fafa94d04bfc185d,
-    type: 3}
-  m_PrefabInstance: {fileID: 2740592623058712699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7693080266725469821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5533734022519543302, guid: 2c455551c37d5e44fafa94d04bfc185d,

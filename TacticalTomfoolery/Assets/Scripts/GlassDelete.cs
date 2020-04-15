@@ -6,6 +6,8 @@ public class GlassDelete : MonoBehaviour
 {
 	float time;
 
+	int peeeeeee;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -24,5 +26,12 @@ public class GlassDelete : MonoBehaviour
 		{
 			time -= Time.deltaTime;
 		}
+
+		peepee(peeeeeee);
+	}
+
+	private int peepee(int i)
+	{
+		return i;
 	}
 }
