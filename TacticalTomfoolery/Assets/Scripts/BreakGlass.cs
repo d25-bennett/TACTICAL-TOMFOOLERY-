@@ -6,6 +6,13 @@ public class BreakGlass : MonoBehaviour
 {
 	public GameObject brokenGlass;
 	public float magnitudeCol, radius, power, upwards;
+	public AudioClip smash;
+	AudioSource audioSource;
+
+	private void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -13,17 +20,7 @@ public class BreakGlass : MonoBehaviour
 		{
 			Destroy(gameObject);
 			Instantiate(brokenGlass, transform.position, transform.rotation);
-			//brokenGlass.localScale = transform.position;
-			//Vector3 explosionPos = transform.position;
-			//Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
-
-			//foreach (Collider hit in colliders)
-			//{
-			//	if (hit.GetComponent<Rigidbody>())
-			//	{
-			//		hit.GetComponent<Rigidbody>().AddExplosionForce(power * collision.relativeVelocity.magnitude, explosionPos, radius);
-			//	}
-			//}
+			audioSource.PlayOneShot(smash, 0.8f);
 		}
 	}
 }
