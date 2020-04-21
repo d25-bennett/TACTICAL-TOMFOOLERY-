@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6665513179752639481}
   m_Layer: 0
   m_Name: Glass
-  m_TagString: bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,10 +108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenGlass: {fileID: 8978039767792421386, guid: f6a5d07ba251e274185404bd9b51fef8,
     type: 3}
-  magnitudeCol: 10
-  radius: 4
-  power: 5
-  upwards: 3
   smash: {fileID: 8300000, guid: e2b67e102abe06e4a92ffc24c07875bc, type: 3}
 --- !u!82 &-6665513179752639481
 AudioSource:
@@ -169,7 +165,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

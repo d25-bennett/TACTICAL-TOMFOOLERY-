@@ -36,7 +36,7 @@ public class SimpleShoot : MonoBehaviour
         GameObject tempFlash;
         Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
         tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
-		audioSource.PlayOneShot(bang, 0.3f);
+		audioSource.PlayOneShot(bang, 0.7f);
 
 		// Destroy(tempFlash, 0.5f);
 		//  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);

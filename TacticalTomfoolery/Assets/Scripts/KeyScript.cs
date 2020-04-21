@@ -21,7 +21,8 @@ public class KeyScript : MonoBehaviour
 	{
 		if (grab.isGrabbed && !triggered)
 		{
-			Instantiate(key);
+			//Instantiate(key);
+			Debug.Log("KEY MASTER");
 			triggered = true;
 		}
 	}
