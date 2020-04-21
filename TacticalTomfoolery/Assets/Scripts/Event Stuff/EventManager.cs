@@ -14,7 +14,7 @@ public class EventManager : MonoBehaviour
 
 	#region Audio 
 	// Audio sources
-	private AudioSource background;
+	public AudioSource background;
 	private AudioSource voice;
 	// Audio for voice clips
 	public AudioClip phone;
@@ -45,7 +45,7 @@ public class EventManager : MonoBehaviour
 	{
 		_names = EventNames.none;
 		voice = GetComponent<AudioSource>();
-		background = GetComponentInChildren<AudioSource>();
+		//background = GetComponentInChildren<AudioSource>();
 		StartCoroutine(GameStart());
 	}
 	
@@ -58,11 +58,11 @@ public class EventManager : MonoBehaviour
 		}
 		if (voice.isPlaying)
 		{
-			//background.volume = bgVoice;
+			background.volume = bgVoice;
 		}
 		else if (!voice.isPlaying)
 		{
-			//background.volume = bgNoVoice;
+			background.volume = bgNoVoice;
 		}
 	}
 

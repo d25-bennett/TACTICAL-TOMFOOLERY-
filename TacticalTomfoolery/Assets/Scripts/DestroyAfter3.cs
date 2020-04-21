@@ -4,9 +4,8 @@ using UnityEngine;
 
  public class DestroyAfter3 : MonoBehaviour 
  {
-     void OnAwake()
-     {
-        Destroy(gameObject, 3);
-     }
-	
+	private void Start()
+	{
+		Destroy(gameObject, 3);
+	}
  }
