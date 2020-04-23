@@ -4,23 +4,43 @@ using UnityEngine;
 
 public class BreakGlass : MonoBehaviour
 {
+	public EventManager events;
 	public GameObject brokenGlass;
-	public float magnitudeCol, radius, power, upwards;
-	public AudioClip smash;
-	AudioSource audioSource;
-
-	private void Start()
-	{
-		audioSource = GetComponent<AudioSource>();
-	}
+	public bool window;
+	private bool broken;
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "bullet")
+		if (other.tag == "bullet" && !broken)
 		{
+			Instantiate(brokenGlass, transform.position, transform.rotation);			
 			Destroy(gameObject);
-			Instantiate(brokenGlass, transform.position, transform.rotation);
-			audioSource.PlayOneShot(smash, 0.8f);
+			TypeBroken();
+			broken = true;
 		}
 	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		if (other.tag == "bullet" && !broken)
+		{
+			Instantiate(brokenGlass, transform.position, transform.rotation);
+			Destroy(gameObject);
+			TypeBroken();
+			broken = true;
+		}
+	}
+
+	void TypeBroken()
+	{
+		if (window)
+		{
+			events.WindowBreak();
+		}
+		else
+		{
+			events.GlassBreak();
+		}
+	}
+
 }
