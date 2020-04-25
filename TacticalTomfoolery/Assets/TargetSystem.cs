@@ -31,7 +31,7 @@ public class TargetSystem : MonoBehaviour
 
     public void curTargetHit()
     { 
-        if (curTargetNum < targets.Length)
+        if (curTargetNum < (targets.Length - 1))
         {
             curTargetNum++;
             targets[curTargetNum].GetComponent<TargetHit>().MakeActive();
