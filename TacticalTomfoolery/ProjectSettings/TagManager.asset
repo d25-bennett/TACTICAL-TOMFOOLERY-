@@ -5,10 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - boom
+<<<<<<< HEAD
   - ExcludeTeleport
   - TeleportIgnore
   - yes
   - no
+=======
+  - bullet
+  - vhsplayer
+  - key
+>>>>>>> DrewBranch
   layers:
   - Default
   - TransparentFX
@@ -19,8 +25,8 @@ TagManager:
   - 
   - 
   - Grabbable
-  - 
-  - 
+  - Player
+  - Level
   - 
   - 
   - 
