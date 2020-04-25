@@ -100,13 +100,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119626799681110}
-  m_LocalRotation: {x: 0.17573133, y: 0.12743507, z: -0.69404864, w: 0.6864221}
-  m_LocalPosition: {x: 0.0267, y: 0.0218, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.10871708, y: 0.061368678, z: -0.707648, w: 0.6954487}
+  m_LocalPosition: {x: 0.0266, y: 0.0108, z: -0.0027}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 4614737286119290}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.717001, y: -4.355, z: -91.588005}
+  m_LocalEulerAnglesHint: {x: 13.773001, y: -4.045, z: -91.485}
 --- !u!64 &64686058146223506
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ Transform:
   m_GameObject: {fileID: 1620805885933330}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.075, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
   m_Children:
   - {fileID: 4614737286119290}
   - {fileID: 4563614555955112}
@@ -893,6 +893,8 @@ MonoBehaviour:
   m_maxGrabDistance: 2
   m_grabObjectsInLayer: 8
   m_obstructionLayer: 0
+  RayCastPosition: {fileID: 5118562756906437744}
+  LineRenderer: {fileID: 0}
 --- !u!120 &1273816630
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1062,6 +1064,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4703665023126470}
+  - {fileID: 336678475929174666}
   m_Father: {fileID: 4669234126623968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1341,4 +1344,34 @@ Transform:
   - {fileID: 4500540600878218}
   m_Father: {fileID: 4488329208033662}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5118562756906437744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336678475929174666}
+  m_Layer: 0
+  m_Name: RaycastPosL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &336678475929174666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118562756906437744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0215, y: -0.0109, z: 0.0755}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4614737286119290}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
