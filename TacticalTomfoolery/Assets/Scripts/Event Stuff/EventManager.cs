@@ -4,8 +4,13 @@ using UnityEngine;
 
 public enum EventNames
 {
-	none, phone, gun, glass,
-	key, draw, vhs,
+	none,
+	intro,
+	unlock,
+	gun,
+	vhs,
+	pieces,
+	end,
 }
 
 public class EventManager : MonoBehaviour
@@ -17,13 +22,12 @@ public class EventManager : MonoBehaviour
 	public AudioSource background;
 	private AudioSource voice;
 	// Audio for voice clips
-	public AudioClip phone;
-	public AudioClip gun;
-	public AudioClip glass;
-
-	public AudioClip key;
-	public AudioClip draw;
+	public AudioClip intro;
+	public AudioClip unlock;
 	public AudioClip vhs;
+	public AudioClip gun;
+	public AudioClip pieces;
+	public AudioClip end;
 	#endregion
 
 	private float voiceTimeLeft;
@@ -37,7 +41,6 @@ public class EventManager : MonoBehaviour
 	private float bgVoice = 0.1f;
 	private float bgNoVoice = 0.2f;
 	private bool windowBroke;
-	private bool glassBroke;
 
 
 	// Start is called before the first frame update
@@ -45,7 +48,6 @@ public class EventManager : MonoBehaviour
 	{
 		_names = EventNames.none;
 		voice = GetComponent<AudioSource>();
-		//background = GetComponentInChildren<AudioSource>();
 		StartCoroutine(GameStart());
 	}
 	
@@ -87,20 +89,23 @@ public class EventManager : MonoBehaviour
 		{
 			case EventNames.none:
 				break;
-			case EventNames.phone:
-				Narration(phone, 1);
+			case EventNames.intro:
+				Narration(intro, 3);
+				break;
+			case EventNames.unlock:
+				Narration(unlock, 0);
+				break;
+			case EventNames.vhs:
+				Narration(vhs, 0);
 				break;
 			case EventNames.gun:
 				Narration(gun, 0);
 				break;
-			case EventNames.glass:
-				Narration(glass, 0);
+			case EventNames.pieces:
+				Narration(pieces, 0);
 				break;
-			case EventNames.key:
-				Narration(key, 0);
-				break;
-			case EventNames.vhs:
-				Narration(vhs, 0);
+			case EventNames.end:
+				Narration(end, 0);
 				break;
 			default:
 				_names = EventNames.none;
@@ -111,9 +116,9 @@ public class EventManager : MonoBehaviour
 	void Narration(AudioClip clip, float delay)
 	{
 		Debug.Log("Playing: " + clip.name);
-		voice.PlayOneShot(clip);
-		//voice.clip = clip;
-		//voice.PlayDelayed(delay);
+		//voice.PlayOneShot(clip);
+		voice.clip = clip;
+		voice.PlayDelayed(delay);
 		_names = EventNames.none;
 		//voiceTimeLeft = clip.length;
 	}
@@ -128,18 +133,45 @@ public class EventManager : MonoBehaviour
 		}
 	}
 
-	public void GlassBreak()
+	// Introduction voice
+	public void PickUpPhone()
 	{
-		if (!glassBroke)
-		{
-			glassBroke = true;
-			SetEvent(EventNames.glass);
-		}
+		SetEvent(EventNames.intro);
 	}
 
+	// Tells player to unlock door
+	public void PickUpKey()
+	{
+		SetEvent(EventNames.unlock);
+	}
+
+	// Unlocked the door
+	public void UnlockedDraw()
+	{
+		SetEvent(EventNames.vhs);
+	}
+
+	// Placed VHS tape in cassette player
 	public void TurnOnTV()
 	{
 		VHS.SetActive(true);
 	}
 
+	// Picked up one of the puzzle pieces
+	public void PickUpPaper()
+	{
+		SetEvent(EventNames.gun);
+	}
+
+	// Shot all of the targets
+	public void DestroyedTargets()
+	{
+		SetEvent(EventNames.pieces);
+	}
+
+	// Placed all of the correct pieces on clipboard
+	public void EndVoice()
+	{
+		SetEvent(EventNames.end);
+	}
 }

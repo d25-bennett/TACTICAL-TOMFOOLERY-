@@ -23,18 +23,19 @@ public class Phone : MonoBehaviour
 		{
 			pickedUp = true;
 			audioS.Stop();
-			events.SetEvent(EventNames.phone);
+			events.PickUpPhone();
 		}
     }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "Player")
-		{
-			events.SetEvent(EventNames.phone);
-			Destroy(this);
-		}
-	}
+	// Not used 
+	//private void OnTriggerEnter(Collider other)
+	//{
+	//	if (other.tag == "Player")
+	//	{
+	//		events.SetEvent(EventNames.intro);
+	//		Destroy(this);
+	//	}
+	//}
 
 	public void CallStart()
 	{
