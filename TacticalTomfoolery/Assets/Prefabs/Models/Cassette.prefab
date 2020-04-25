@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8335743200802011892}
   m_Layer: 8
   m_Name: Cassette
-  m_TagString: Untagged
+  m_TagString: vhsplayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,4 +127,4 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
-  m_materialColorField: 
+  m_materialColorField: _OutlineColor
