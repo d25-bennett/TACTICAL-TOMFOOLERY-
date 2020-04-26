@@ -17,7 +17,7 @@ public class VCR_Level : MonoBehaviour
 	{
 		if (other.tag == "vhsplayer" && !isPlaying)
 		{
-			events.SetEvent(EventNames.vhs);
+			//events.SetEvent(EventNames.vhs);
 			anim.SetBool("playAnim", true);
 			Destroy(other.gameObject);
 			StartCoroutine(WaitTime());

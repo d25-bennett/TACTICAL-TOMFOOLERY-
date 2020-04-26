@@ -15,7 +15,6 @@ public class BreakGlass : MonoBehaviour
 		{
 			Instantiate(brokenGlass, transform.position, transform.rotation);			
 			Destroy(gameObject);
-			TypeBroken();
 			broken = true;
 		}
 	}
@@ -26,20 +25,7 @@ public class BreakGlass : MonoBehaviour
 		{
 			Instantiate(brokenGlass, transform.position, transform.rotation);
 			Destroy(gameObject);
-			TypeBroken();
 			broken = true;
-		}
-	}
-
-	void TypeBroken()
-	{
-		if (window)
-		{
-			events.WindowBreak();
-		}
-		else
-		{
-			events.GlassBreak();
 		}
 	}
 
