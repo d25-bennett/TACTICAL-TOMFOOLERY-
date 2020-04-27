@@ -36,5 +36,4 @@ public class TitleFade : MonoBehaviour
 			yield return null;
 		}
 	}
-
 }
