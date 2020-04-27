@@ -6,6 +6,12 @@ TagManager:
   tags:
   - wall
   - coin
+  - boom
+  - bullet
+  - vhsplayer
+  - no
+  - yes
+  - key
   layers:
   - Default
   - TransparentFX
