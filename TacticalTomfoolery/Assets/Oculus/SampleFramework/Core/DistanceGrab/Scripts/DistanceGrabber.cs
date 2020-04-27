@@ -42,7 +42,7 @@ namespace OculusSampleFramework
         public bool UseSpherecast
         {
             get { return m_useSpherecast; }
-            set 
+            set
             {
                 m_useSpherecast = value;
                 GrabVolumeEnable(!m_useSpherecast);
@@ -73,12 +73,21 @@ namespace OculusSampleFramework
 
         protected DistanceGrabbable m_target;
         // Tracked separately from m_target, because we support child colliders of a DistanceGrabbable.
-        // MTF TODO: verify this still works!
         protected Collider m_targetCollider;
+
+        //Line Renderer
+        public GameObject RayCastPosition;
+        public LineRenderer LineRenderer;
+        private float LineWidth = 0.01f;
+        private float LineMaxLength = 2f;
+        private Vector3[] InitLaserPositions;
 
         protected override void Start()
         {
             base.Start();
+
+            InitLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
+            LineRenderer = GetComponent<LineRenderer>();
 
             // Set up our max grab distance to be based on the player's max grab distance.
             // Adding a liberal margin of error here, because users can move away some from the 
@@ -88,7 +97,7 @@ namespace OculusSampleFramework
             SphereCollider sc = m_player.GetComponentInChildren<SphereCollider>();
             m_maxGrabDistance = sc.radius + 3.0f;
 
-            if(m_parentHeldObject == true)
+            if (m_parentHeldObject == true)
             {
                 Debug.LogError("m_parentHeldObject incompatible with DistanceGrabber. Setting to false.");
                 m_parentHeldObject = false;
@@ -104,13 +113,14 @@ namespace OculusSampleFramework
 #if UNITY_EDITOR
             OVRPlugin.SendEvent("distance_grabber", (SceneManager.GetActiveScene().name == "DistanceGrab").ToString(), "sample_framework");
 #endif
-    }
+        }
 
-    void Update()
+        void Update()
         {
+            RenderLine();
 
             Debug.DrawRay(transform.position, transform.forward, Color.red, 0.1f);
-            
+
             DistanceGrabbable target;
             Collider targetColl;
             FindTarget(out target, out targetColl);
@@ -121,9 +131,9 @@ namespace OculusSampleFramework
                 {
                     m_target.Targeted = m_otherHand.m_target == m_target;
                 }
-                if(m_target != null)
+                if (m_target != null)
                     m_target.ClearColor();
-                if(target != null)
+                if (target != null)
                     target.SetColor(m_focusColor);
                 m_target = target;
                 m_targetCollider = targetColl;
@@ -158,7 +168,7 @@ namespace OculusSampleFramework
 
                 // If it's within a certain distance respect the no-snap.
                 Vector3 closestPointOnBounds = closestGrabbableCollider.ClosestPointOnBounds(m_gripTransform.position);
-                if(!m_grabbedObj.snapPosition && !m_grabbedObj.snapOrientation && m_noSnapThreshhold > 0.0f && (closestPointOnBounds - m_gripTransform.position).magnitude < m_noSnapThreshhold)
+                if (!m_grabbedObj.snapPosition && !m_grabbedObj.snapOrientation && m_noSnapThreshhold > 0.0f && (closestPointOnBounds - m_gripTransform.position).magnitude < m_noSnapThreshhold)
                 {
                     Vector3 relPos = m_grabbedObj.transform.position - transform.position;
                     m_movingObjectToHand = false;
@@ -220,7 +230,7 @@ namespace OculusSampleFramework
             {
                 float travel = m_objectPullVelocity * Time.deltaTime;
                 Vector3 dir = grabbablePosition - m_grabbedObj.transform.position;
-                if(travel * travel * 1.1f > dir.sqrMagnitude)
+                if (travel * travel * 1.1f > dir.sqrMagnitude)
                 {
                     m_movingObjectToHand = false;
                 }
@@ -272,7 +282,7 @@ namespace OculusSampleFramework
                     if (grabbableMagSq < closestMagSq)
                     {
                         bool accept = true;
-                        if(m_preventGrabThroughWalls)
+                        if (m_preventGrabThroughWalls)
                         {
                             // NOTE: if this raycast fails, ideally we'd try other rays near the edges of the object, especially for large objects.
                             // NOTE 2: todo optimization: sort the objects before performing any raycasts.
@@ -285,13 +295,13 @@ namespace OculusSampleFramework
                             if (Physics.Raycast(ray, out obstructionHitInfo, m_maxGrabDistance, 1 << m_obstructionLayer))
                             {
                                 float distToObject = (grabbableCollider.ClosestPointOnBounds(m_gripTransform.position) - m_gripTransform.position).magnitude;
-                                if(distToObject > obstructionHitInfo.distance * 1.1)
+                                if (distToObject > obstructionHitInfo.distance * 1.1)
                                 {
                                     accept = false;
                                 }
                             }
                         }
-                        if(accept)
+                        if (accept)
                         {
                             closestMagSq = grabbableMagSq;
                             dgOut = grabbable;
@@ -330,7 +340,7 @@ namespace OculusSampleFramework
                 {
                     grabbable = hitInfo.collider.gameObject.GetComponentInParent<DistanceGrabbable>();
                     hitCollider = grabbable == null ? null : hitInfo.collider;
-                    if(grabbable)
+                    if (grabbable)
                     {
                         dgOut = grabbable;
                         collOut = hitCollider;
@@ -348,7 +358,7 @@ namespace OculusSampleFramework
                     if (Physics.Raycast(ray, out obstructionHitInfo, 1 << m_obstructionLayer))
                     {
                         DistanceGrabbable obstruction = null;
-                        if(hitInfo.collider != null)
+                        if (hitInfo.collider != null)
                         {
                             obstruction = obstructionHitInfo.collider.gameObject.GetComponentInParent<DistanceGrabbable>();
                         }
@@ -365,14 +375,55 @@ namespace OculusSampleFramework
 
         protected override void GrabVolumeEnable(bool enabled)
         {
-            if(m_useSpherecast) enabled = false;
+            if (m_useSpherecast) enabled = false;
             base.GrabVolumeEnable(enabled);
         }
 
         // Just here to allow calling of a protected member function.
-      protected override void OffhandGrabbed(OVRGrabbable grabbable)
+        protected override void OffhandGrabbed(OVRGrabbable grabbable)
         {
             base.OffhandGrabbed(grabbable);
+        }
+
+
+        private void RenderLine()
+        {
+            DistanceGrabbable closestGrabbable = m_target;
+
+            if (closestGrabbable == null)
+            {
+                int layerMask = 1 << 8;
+
+                RaycastHit hit;
+                //Does the ray intersect any objects excluding the player layer
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100, layerMask))
+                {
+                    LineRenderer.enabled = true;
+                    LineRenderer.SetPositions(InitLaserPositions);
+                    LineRenderer.startWidth = LineWidth;
+                    LineRenderer.endWidth = LineWidth;
+                    RenderLine(RayCastPosition.transform.position, transform.TransformDirection(Vector3.forward), LineMaxLength);
+                }
+                else
+                {
+                    LineRenderer.enabled = false;
+                }
+            }
+        }
+
+        void RenderLine(Vector3 targetPosition, Vector3 direction, float length)
+        {
+            Ray ray = new Ray(targetPosition, direction);
+            RaycastHit raycastHit;
+            Vector3 endPosition = targetPosition + (length * direction);
+
+            if (Physics.Raycast(ray, out raycastHit, length))
+            {
+                endPosition = raycastHit.point;
+            }
+
+            LineRenderer.SetPosition(0, targetPosition);
+            LineRenderer.SetPosition(1, endPosition);
         }
     }
 }
