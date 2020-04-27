@@ -21,6 +21,13 @@ public class EventManager : MonoBehaviour
 	// Audio sources
 	public AudioSource background;
 	private AudioSource voice;
+
+	// Selects volume of ambience
+	private float bgVoice = 0.1f;
+	private float bgNoVoice = 0.2f;
+	private bool windowBroke;
+	private float voiceTimeLeft;
+
 	// Audio for voice clips
 	public AudioClip intro;
 	public AudioClip unlock;
@@ -30,17 +37,12 @@ public class EventManager : MonoBehaviour
 	public AudioClip end;
 	#endregion
 
-	private float voiceTimeLeft;
 
 	private float start = 3f;
 	public TitleFade _fade;
 	public Phone _phone;
 	public GameObject VHS;
 
-	// Selects volume of ambience
-	private float bgVoice = 0.1f;
-	private float bgNoVoice = 0.2f;
-	private bool windowBroke;
 
 
 	// Start is called before the first frame update
@@ -70,12 +72,11 @@ public class EventManager : MonoBehaviour
 
 	IEnumerator GameStart()
 	{
-		yield return new WaitForSeconds(2);
-		StartCoroutine(_fade.FadeTo(1.0f, 1.0f));
-		yield return new WaitForSeconds(5);
-		StartCoroutine(_fade.FadeTo(0f, 1.0f));
-
-		Destroy(_fade.gameObject, 2.5f);
+		
+		StartCoroutine(_fade.FadeTo(1.0f, 1.0f, 2));
+		StartCoroutine(_fade.FadeTo(0f, 1.0f, 7));
+		Destroy(_fade.gameObject, 9.5f);
+		yield return null;
 	}
 
 	public void SetEvent(EventNames names)
@@ -90,7 +91,7 @@ public class EventManager : MonoBehaviour
 			case EventNames.none:
 				break;
 			case EventNames.intro:
-				Narration(intro, 3);
+				Narration(intro, 2);
 				break;
 			case EventNames.unlock:
 				Narration(unlock, 0);
