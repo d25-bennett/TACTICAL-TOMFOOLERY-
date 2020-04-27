@@ -18,14 +18,9 @@ public class TargetHit : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        targetLightObj = this.gameObject.transform.GetChild(0).gameObject;
-       
-    }
-
     public void MakeActive()
     {
+        targetLightObj = this.gameObject.transform.GetChild(0).gameObject;
         active = true;
         targetLightObj.SetActive(true);
     }

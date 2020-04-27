@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 54754061181521972}
   - component: {fileID: 6874343225709053244}
   - component: {fileID: 1203251491539852557}
+  - component: {fileID: 3642604701139647217}
   m_Layer: 0
   m_Name: Bullet_45mm_Bullet
   m_TagString: bullet
@@ -154,3 +155,16 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0.17}
+--- !u!135 &3642604701139647217
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900734910723676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: 0, y: 0, z: 0.04}

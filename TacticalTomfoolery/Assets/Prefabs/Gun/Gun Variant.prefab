@@ -452,7 +452,7 @@ MonoBehaviour:
   barrelLocation: {fileID: 2196136910565183959}
   casingExitLocation: {fileID: 2190000116078347707}
   bang: {fileID: 8300000, guid: 94c1047bb0be0af4aa706b0d0ef307a2, type: 3}
-  shotPower: 1500
+  shotPower: 5000
 --- !u!54 &6437707073549552797
 Rigidbody:
   m_ObjectHideFlags: 0
