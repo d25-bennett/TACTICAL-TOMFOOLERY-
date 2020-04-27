@@ -4,36 +4,45 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-	public GameObject key;
-	private Collider col;
-	private OVRGrabbable grab;
-
+    public GameObject deskDoor;
+    private OVRGrabbable grab;
 	public bool triggered;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		grab = GetComponent<OVRGrabbable>();
-		//grab.enabled = false;
+        triggered = false;
 	}
 
 	private void Update()
 	{
 		if (grab.isGrabbed && !triggered)
 		{
-			//Instantiate(key);
-			Debug.Log("KEY MASTER");
-			triggered = true;
-		}
+            triggered = true;
+            StartCoroutine(ReleaseKey(1f));
+            StartCoroutine(UnlockDoor(5f));
+        }
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-		//.Log("Been hit");
-		if (other.tag == "key")
-		{
-			// If book is colliding with key, ignore the collision
-			Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
-		}
-	}
+    private IEnumerator ReleaseKey(float waitTime)
+    {
+       
+        GameObject childKey = transform.Find("Key").gameObject;
+        yield return new WaitForSeconds(waitTime);
+  
+        childKey.transform.parent = null;
+        childKey.SetActive(true);
+        
+
+    }
+
+    private IEnumerator UnlockDoor(float waitTime)
+    {
+        
+        yield return new WaitForSeconds(waitTime);
+
+        Rigidbody deskDoorRigi = deskDoor.GetComponent<Rigidbody>();
+        deskDoorRigi.freezeRotation = false;
+    }
 }

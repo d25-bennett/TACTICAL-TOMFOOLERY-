@@ -7,6 +7,7 @@ public class Phone : MonoBehaviour
 	public EventManager events;
 	private AudioSource audioS;
 	private OVRGrabbable grab;
+	public TitleFade fade;
 	private bool pickedUp;
 
 	private void Start()
@@ -24,6 +25,8 @@ public class Phone : MonoBehaviour
 			pickedUp = true;
 			audioS.Stop();
 			events.PickUpPhone();
+			StartCoroutine(fade.FadeTo(0f, 0.2f, 0));
+			Destroy(fade, 1);
 		}
     }
 
@@ -40,5 +43,6 @@ public class Phone : MonoBehaviour
 	public void CallStart()
 	{
 		audioS.PlayDelayed(4);
+		StartCoroutine(fade.FadeTo(1f, 0.75f, 9f));
 	}
 }

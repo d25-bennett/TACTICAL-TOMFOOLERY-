@@ -25,8 +25,9 @@ public class TitleFade : MonoBehaviour
 		//}
 	}
 
-	public IEnumerator FadeTo(float aValue, float aTime)
+	public IEnumerator FadeTo(float aValue, float aTime, float aWait)
 	{
+		yield return new WaitForSeconds(aWait);
 		float alpha = mat.material.color.a;
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
 		{
@@ -35,5 +36,4 @@ public class TitleFade : MonoBehaviour
 			yield return null;
 		}
 	}
-
 }
