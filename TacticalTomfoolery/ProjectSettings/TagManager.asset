@@ -7,6 +7,7 @@ TagManager:
   - boom
   - bullet
   - vhsplayer
+  - key
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - 
   - 
   - Grabbable
-  - 
-  - 
+  - Player
+  - Level
   - 
   - 
   - 

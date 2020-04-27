@@ -5,12 +5,16 @@ using UnityEngine;
 public class BrokenGlass : MonoBehaviour
 {
 	float time;
+	public AudioClip smash;
+	AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 		time = 3;
-    }
+		audioSource = GetComponent<AudioSource>();
+		audioSource.PlayOneShot(smash, 0.8f);
+	}
 
     // Update is called once per frame
     void Update()
