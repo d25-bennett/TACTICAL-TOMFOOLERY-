@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetSystem : MonoBehaviour
 {
-    public bool finished;
+    public EventManager events;
 
     private GameObject[] targets;
     private int curTargetNum;
@@ -12,12 +12,12 @@ public class TargetSystem : MonoBehaviour
     void Start()
     {
         targets = new GameObject[transform.childCount];
-        finished = false;
         for (int i = 0; i < transform.childCount; i++)
         {
             targets[i] = transform.GetChild(i).gameObject;
+            targets[i].SetActive(false);
         }
-
+        
         StartPuzzle();
     }
 
@@ -25,6 +25,7 @@ public class TargetSystem : MonoBehaviour
     {
 
         curTargetNum = 0;
+        targets[curTargetNum].SetActive(true);
         targets[curTargetNum].GetComponent<TargetHit>().MakeActive();
 
     }
@@ -34,12 +35,13 @@ public class TargetSystem : MonoBehaviour
         if (curTargetNum < (targets.Length -1))
         {
             curTargetNum++;
+            targets[curTargetNum].SetActive(true);
             targets[curTargetNum].GetComponent<TargetHit>().MakeActive();
 
         }
         else
         {
-            finished = true;
+            events.DestroyedTargets();
         }
     }
 }

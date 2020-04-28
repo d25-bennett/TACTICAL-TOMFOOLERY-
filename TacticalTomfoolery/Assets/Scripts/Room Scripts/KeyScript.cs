@@ -7,6 +7,7 @@ public class KeyScript : MonoBehaviour
     public GameObject deskDoor;
     private OVRGrabbable grab;
 	public bool triggered;
+    public EventManager events;
 
 	// Start is called before the first frame update
 	void Start()
@@ -21,7 +22,7 @@ public class KeyScript : MonoBehaviour
 		{
             triggered = true;
             StartCoroutine(ReleaseKey(1f));
-            StartCoroutine(UnlockDoor(5f));
+            StartCoroutine(UnlockDoor(3f));
         }
 	}
 
@@ -33,8 +34,8 @@ public class KeyScript : MonoBehaviour
   
         childKey.transform.parent = null;
         childKey.SetActive(true);
-        
 
+        events.SetEvent(EventNames.unlock);
     }
 
     private IEnumerator UnlockDoor(float waitTime)
@@ -44,5 +45,7 @@ public class KeyScript : MonoBehaviour
 
         Rigidbody deskDoorRigi = deskDoor.GetComponent<Rigidbody>();
         deskDoorRigi.freezeRotation = false;
+        deskDoorRigi.AddForce(0, 0, -2, ForceMode.Impulse);
+        events.SetEvent(EventNames.vhs);
     }
 }

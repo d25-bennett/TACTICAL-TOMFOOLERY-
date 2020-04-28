@@ -37,16 +37,15 @@ public class EventManager : MonoBehaviour
 	public AudioClip end;
 	#endregion
 
-
-	private float start = 3f;
+    
 	public TitleFade _fade;
 	public Phone _phone;
 	public GameObject VHS;
+    public TargetSystem _targets;
 
 
-
-	// Start is called before the first frame update
-	void Start()
+    // Start is called before the first frame update
+    void Start()
 	{
 		_names = EventNames.none;
 		voice = GetComponent<AudioSource>();
@@ -91,13 +90,13 @@ public class EventManager : MonoBehaviour
 			case EventNames.none:
 				break;
 			case EventNames.intro:
-				Narration(intro, 2);
+				Narration(intro, 1);
 				break;
 			case EventNames.unlock:
 				Narration(unlock, 0);
 				break;
 			case EventNames.vhs:
-				Narration(vhs, 0);
+				Narration(vhs, 3);
 				break;
 			case EventNames.gun:
 				Narration(gun, 0);
@@ -128,8 +127,8 @@ public class EventManager : MonoBehaviour
 	{
 		if (!windowBroke)
 		{
-			bgVoice = 0.2f;
-			bgNoVoice = 0.4f;
+			bgVoice = 0.3f;
+			bgNoVoice = 0.8f;
 			windowBroke = true;
 		}
 	}
@@ -150,6 +149,7 @@ public class EventManager : MonoBehaviour
 	public void UnlockedDraw()
 	{
 		SetEvent(EventNames.vhs);
+        // Change clipboard textures to cipher 
 	}
 
 	// Placed VHS tape in cassette player
@@ -162,12 +162,13 @@ public class EventManager : MonoBehaviour
 	public void PickUpPaper()
 	{
 		SetEvent(EventNames.gun);
+        _targets.StartPuzzle();
 	}
 
 	// Shot all of the targets
 	public void DestroyedTargets()
 	{
-		SetEvent(EventNames.pieces);
+        SetEvent(EventNames.pieces);
 	}
 
 	// Placed all of the correct pieces on clipboard

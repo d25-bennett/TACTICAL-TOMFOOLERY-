@@ -17,7 +17,6 @@ public class VCR_Level : MonoBehaviour
 	{
 		if (other.tag == "vhsplayer" && !isPlaying)
 		{
-			//events.SetEvent(EventNames.vhs);
 			anim.SetBool("playAnim", true);
 			Destroy(other.gameObject);
 			StartCoroutine(WaitTime());
@@ -30,5 +29,6 @@ public class VCR_Level : MonoBehaviour
 	{
 		yield return new WaitForSeconds(5);
 		events.TurnOnTV();
+        // Spawn paper 
 	}
 }
