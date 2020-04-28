@@ -1,14 +1,3 @@
-/************************************************************************************
-
-Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.  
-
-See SampleFramework license.txt for license terms.  Unless required by applicable law 
-or agreed to in writing, the sample code is provided “AS IS” WITHOUT WARRANTIES OR 
-CONDITIONS OF ANY KIND, either express or implied.  See the license for specific 
-language governing permissions and limitations under the license.
-
-************************************************************************************/
-
 using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -17,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 namespace OculusSampleFramework
 {
-    /// <summary>
-    /// Allows grabbing and throwing of objects with the DistanceGrabbable component on them.
-    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     public class DistanceGrabber : OVRGrabber
     {
@@ -78,9 +64,12 @@ namespace OculusSampleFramework
         //Line Renderer
         public GameObject RayCastPosition;
         public LineRenderer LineRenderer;
+        public GameObject HandsMesh;
         private float LineWidth = 0.01f;
-        private float LineMaxLength = 2f;
+        private float LineMaxLength = 250f;
         private Vector3[] InitLaserPositions;
+        private bool handsActive = true;
+
 
         protected override void Start()
         {
@@ -119,7 +108,19 @@ namespace OculusSampleFramework
         {
             RenderLine();
 
-            Debug.DrawRay(transform.position, transform.forward, Color.red, 0.1f);
+            if (handsActive == true)
+            {
+                HandsMesh.SetActive(true);
+                Debug.Log("Hands On");
+                LineRenderer.enabled = true;
+            }
+            else
+            {
+                HandsMesh.SetActive(false);
+                Debug.Log("Hands Off");
+                LineRenderer.enabled = false;
+            }
+            //Debug.DrawRay(transform.position, transform.forward, Color.red, 0.1f);
 
             DistanceGrabbable target;
             Collider targetColl;
@@ -131,12 +132,15 @@ namespace OculusSampleFramework
                 {
                     m_target.Targeted = m_otherHand.m_target == m_target;
                 }
+                
                 if (m_target != null)
                     m_target.ClearColor();
+
                 if (target != null)
                     target.SetColor(m_focusColor);
                 m_target = target;
                 m_targetCollider = targetColl;
+                
                 if (m_target != null)
                 {
                     m_target.Targeted = true;
@@ -155,7 +159,12 @@ namespace OculusSampleFramework
             {
                 if (closestGrabbable.isGrabbed)
                 {
+                    handsActive = false;
                     ((DistanceGrabber)closestGrabbable.grabbedBy).OffhandGrabbed(closestGrabbable);
+                }
+                else
+                {
+                    handsActive = true;
                 }
 
                 m_grabbedObj = closestGrabbable;
@@ -194,7 +203,6 @@ namespace OculusSampleFramework
                         m_grabbedObjectRotOff = m_grabbedObj.snapOffset.rotation * m_grabbedObjectRotOff;
                     }
                 }
-
             }
         }
 
@@ -396,7 +404,7 @@ namespace OculusSampleFramework
 
                 RaycastHit hit;
                 //Does the ray intersect any objects excluding the player layer
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 100, layerMask))
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 250, layerMask))
                 {
                     LineRenderer.enabled = true;
                     LineRenderer.SetPositions(InitLaserPositions);

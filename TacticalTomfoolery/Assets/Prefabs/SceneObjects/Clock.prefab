@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8569150416679237621}
   - component: {fileID: 8569150416679237626}
   - component: {fileID: 8569150416679237627}
+  - component: {fileID: 8993912074883165076}
   m_Layer: 0
   m_Name: Minute
   m_TagString: Untagged
@@ -78,6 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8993912074883165076
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569150416679237622}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8569150416853331767
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,8 +183,8 @@ GameObject:
   - component: {fileID: 8569150416886186627}
   - component: {fileID: 8569150416886186652}
   - component: {fileID: 8569150416886186653}
-  - component: {fileID: 8569150416886186654}
   - component: {fileID: 8569150416886186655}
+  - component: {fileID: 6688320931022919764}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -240,20 +255,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &8569150416886186654
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8569150416886186648}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &8569150416886186655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +271,20 @@ MonoBehaviour:
   MinutePivot: {fileID: 8569150416904888556}
   HourPivot: {fileID: 8569150416853331766}
   reversed: 0
+--- !u!64 &6688320931022919764
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569150416886186648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8569150416904888557
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +375,7 @@ GameObject:
   - component: {fileID: 8569150417013548270}
   - component: {fileID: 8569150417013548179}
   - component: {fileID: 8569150417013548268}
+  - component: {fileID: 2167236842167241257}
   m_Layer: 0
   m_Name: Second
   m_TagString: Untagged
@@ -427,6 +443,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2167236842167241257
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569150417013548271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8569150418140628984
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +547,7 @@ GameObject:
   - component: {fileID: 8569150418221056431}
   - component: {fileID: 8569150418221056428}
   - component: {fileID: 8569150418221056429}
+  - component: {fileID: 4080267909011083900}
   m_Layer: 0
   m_Name: Hour
   m_TagString: Untagged
@@ -584,3 +615,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4080267909011083900
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8569150418221056424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
