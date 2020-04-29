@@ -8,7 +8,8 @@ public class ShootIfGrabbed : MonoBehaviour
     private OVRGrabbable ovrGrabbable;
     public OVRInput.Button shootingButton;
 	public TitleFade fade;
-	private bool triggered;
+	private bool grabbed;
+	private bool shot;
 
     void Start()
     {
@@ -21,14 +22,15 @@ public class ShootIfGrabbed : MonoBehaviour
         if (ovrGrabbable.isGrabbed && OVRInput.GetDown(shootingButton, ovrGrabbable.grabbedBy.GetController()))
         {
             simpleShoot.TriggerShoot();
-            if (!triggered)
+            if (!shot)
             {
                 StartCoroutine(fade.FadeTo(0, 0.5f, 0f));
-                triggered = true;
+				Destroy(fade, 1);
+				shot = true;
             }
         }
 
-		if (!triggered)
+		if (!grabbed)
 		{
 			ControllerSprite();
 		}
@@ -39,10 +41,7 @@ public class ShootIfGrabbed : MonoBehaviour
 		if (ovrGrabbable.isGrabbed)
 		{
 			StartCoroutine(fade.FadeTo(1, 0.5f, 1));
-		}
-		else if (!ovrGrabbable.isGrabbed)
-		{
-			StartCoroutine(fade.FadeTo(0, 0.5f, 0));
+			grabbed = true;
 		}
 	}
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EventNames
 {
@@ -38,11 +39,14 @@ public class EventManager : MonoBehaviour
 	#endregion
 
     
-	public TitleFade _fade;
+	public TitleFade _title;
 	public Phone _phone;
-	public GameObject VHS;
+	public GameObject _tvScreen;
+	public GameObject _morseCode;
+	public clipboardRenderer _clipBoard;
     public TargetSystem _targets;
     public PaperSystem _paper;
+	public OVRScreenFade fade;
 
 
     // Start is called before the first frame update
@@ -73,9 +77,9 @@ public class EventManager : MonoBehaviour
 	IEnumerator GameStart()
 	{
 		
-		StartCoroutine(_fade.FadeTo(1.0f, 1.0f, 2));
-		StartCoroutine(_fade.FadeTo(0f, 1.0f, 7));
-		Destroy(_fade.gameObject, 9.5f);
+		StartCoroutine(_title.FadeTo(1.0f, 1.0f, 2));
+		StartCoroutine(_title.FadeTo(0f, 1.0f, 7));
+		Destroy(_title.gameObject, 9.5f);
 		yield return null;
 	}
 
@@ -117,11 +121,9 @@ public class EventManager : MonoBehaviour
 	void Narration(AudioClip clip, float delay)
 	{
 		Debug.Log("Playing: " + clip.name);
-		//voice.PlayOneShot(clip);
 		voice.clip = clip;
 		voice.PlayDelayed(delay);
 		_names = EventNames.none;
-		//voiceTimeLeft = clip.length;
 	}
 
 	public void WindowBreak()
@@ -151,34 +153,46 @@ public class EventManager : MonoBehaviour
 	{
         _paper.SpawnCupboardPaper();
         SetEvent(EventNames.vhs);
-        // Change clipboard textures to cipher 
 	}
 
 	// Placed VHS tape in cassette player
 	public void TurnOnTV()
 	{
+		_clipBoard.MorseText();
         _paper.SpawnVHSPaper();
-        VHS.SetActive(true);
+        _tvScreen.SetActive(true);
+		_morseCode.SetActive(true);
     }
 
 	// Picked up one of the puzzle pieces
 	public void PickUpPaper()
 	{
+		_morseCode.SetActive(false);
+		_targets.StartPuzzle();
 		SetEvent(EventNames.gun);
-        _targets.StartPuzzle();
 	}
 
 	// Shot all of the targets
 	public void DestroyedTargets()
 	{
         _paper.SpawnTargetPaper();
-        SetEvent(EventNames.pieces);
- 
+		_clipBoard.EndText();
+        SetEvent(EventNames.pieces); 
     }
 
 	// Placed all of the correct pieces on clipboard
 	public void EndVoice()
 	{
 		SetEvent(EventNames.end);
+		StartCoroutine(EndFade());
+	}
+
+	IEnumerator EndFade()
+	{
+		yield return new WaitForSeconds(3);
+		fade.FadeOut();
+		yield return new WaitForSeconds(3);
+		
+		//SceneManager.LoadScene(1);
 	}
 }

@@ -26,7 +26,7 @@ public class Phone : MonoBehaviour
 			audioS.Stop();
 			events.PickUpPhone();
 		}
-        if (pickedUp && fade != null)
+        if (!pickedUp && fade != null)
         {
             StartCoroutine(fade.FadeTo(0f, 0.2f, 1f));
             Destroy(fade, 1);

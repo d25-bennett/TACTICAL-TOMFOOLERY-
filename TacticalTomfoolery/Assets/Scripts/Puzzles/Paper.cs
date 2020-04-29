@@ -5,6 +5,10 @@ using UnityEngine;
 public class Paper : MonoBehaviour
 {
     public Transform slot;
+	public PaperSystem sys;
+	public bool morsePuzzle;
+	private bool pickedUp;
+	private OVRGrabbable ovrGrabbable;
 
 
     private void OnTriggerEnter(Collider other)
@@ -19,10 +23,15 @@ public class Paper : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().freezeRotation = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;
             this.transform.parent.GetComponent<PaperSystem>().PaperPlaced();
-
-
         }
     }
 
+	private void Update()
+	{
+		if (ovrGrabbable.isGrabbed && !pickedUp && morsePuzzle)
+		{
+			sys.MorsePaper();
+		}
+	}
 
 }

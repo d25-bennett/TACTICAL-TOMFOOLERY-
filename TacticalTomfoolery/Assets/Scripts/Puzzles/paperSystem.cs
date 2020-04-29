@@ -7,6 +7,7 @@ public class PaperSystem : MonoBehaviour
     private GameObject[] paper;
     private int picesSlotted = 0;
     public EventManager events;
+	private bool pickedUp;
 
 
     void Start()
@@ -17,15 +18,11 @@ public class PaperSystem : MonoBehaviour
             paper[i] = transform.GetChild(i).gameObject;
             paper[i].SetActive(false);
         }
-   
-
-
     }
    
     public void SpawnCupboardPaper()
     {
         paper[0].SetActive(true);
-
     }
 
     public void SpawnVHSPaper()
@@ -42,17 +39,21 @@ public class PaperSystem : MonoBehaviour
 
     public void PaperPlaced()
     {
-
         picesSlotted++;
 
         if (picesSlotted == 3)
         {
             events.EndVoice();
         }
-        else if (picesSlotted == 1)
-        {
-            events.PickUpPaper();
-        }
     }
-  
+
+	public void MorsePaper()
+	{
+		if (!pickedUp)
+		{
+			pickedUp = true;
+			events.PickUpPaper();
+		}
+	}
+	
 }
