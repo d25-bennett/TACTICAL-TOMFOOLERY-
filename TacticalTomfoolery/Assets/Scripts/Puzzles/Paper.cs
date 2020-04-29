@@ -10,6 +10,11 @@ public class Paper : MonoBehaviour
 	private bool pickedUp;
 	private OVRGrabbable ovrGrabbable;
 
+    private void Start()
+    {
+        ovrGrabbable = GetComponent<OVRGrabbable>();
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
