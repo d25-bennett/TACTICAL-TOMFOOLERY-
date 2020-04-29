@@ -17,6 +17,7 @@ public enum EventNames
 public class EventManager : MonoBehaviour
 {
 	private EventNames _names;
+	public bool IsCredits;
 
 	#region Audio 
 	// Audio sources
@@ -47,6 +48,8 @@ public class EventManager : MonoBehaviour
     public TargetSystem _targets;
     public PaperSystem _paper;
 	public OVRScreenFade fade;
+	public TitleFade _credits;
+	public Light creditsLight;
 
 
     // Start is called before the first frame update
@@ -55,23 +58,44 @@ public class EventManager : MonoBehaviour
 		_names = EventNames.none;
 		voice = GetComponent<AudioSource>();
 		StartCoroutine(GameStart());
+		if (IsCredits)
+		{
+			StartCoroutine(_credits.FadeTo(1.0f, 1.0f, 9));
+			StartCoroutine(_credits.FadeTo(0f, 1.0f, 16));
+			StartCoroutine(Ending());
+		}
 	}
 	
 	// Update is called once per frame
 	void Update()
 	{
-		if (_names != EventNames.none)
+		if (!IsCredits)
 		{
-			NarrationSwitch();
+			if (_names != EventNames.none)
+			{
+				NarrationSwitch();
+			}
+			if (voice.isPlaying)
+			{
+				background.volume = bgVoice;
+			}
+			else if (!voice.isPlaying)
+			{
+				background.volume = bgNoVoice;
+			}
 		}
-		if (voice.isPlaying)
-		{
-			background.volume = bgVoice;
-		}
-		else if (!voice.isPlaying)
-		{
-			background.volume = bgNoVoice;
-		}
+	}
+
+	IEnumerator Ending()
+	{
+		yield return new WaitForSeconds(2.1f);
+		creditsLight.intensity = Mathf.Lerp(0, 1, 1);
+		yield return new WaitForSeconds(18);
+		fade.FadeOut();
+		creditsLight.intensity = Mathf.Lerp(1, 0,1);
+		yield return new WaitForSeconds(3);
+		Debug.Log("Application Quit");
+		Application.Quit();
 	}
 
 	IEnumerator GameStart()
@@ -193,6 +217,6 @@ public class EventManager : MonoBehaviour
 		fade.FadeOut();
 		yield return new WaitForSeconds(3);
 		
-		//SceneManager.LoadScene(1);
+		SceneManager.LoadScene(1);
 	}
 }

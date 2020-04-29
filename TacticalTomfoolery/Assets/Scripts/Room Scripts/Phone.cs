@@ -8,6 +8,7 @@ public class Phone : MonoBehaviour
 	private AudioSource audioS;
 	private OVRGrabbable grab;
 	public TitleFade fade;
+	public float phoneDelay;
 	private bool pickedUp;
 
 	private void Start()
@@ -32,7 +33,10 @@ public class Phone : MonoBehaviour
 
 	public void CallStart()
 	{
-		audioS.PlayDelayed(4);
-		StartCoroutine(fade.FadeTo(1f, 0.75f, 9f));
+		audioS.PlayDelayed(phoneDelay);
+		if (fade != null)
+		{
+			StartCoroutine(fade.FadeTo(1f, 0.75f, 9f));
+		}
 	}
 }
