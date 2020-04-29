@@ -18,7 +18,7 @@ public class TargetSystem : MonoBehaviour
             targets[i].SetActive(false);
         }
         
-        StartPuzzle();
+        //StartPuzzle();
     }
 
     public void StartPuzzle()

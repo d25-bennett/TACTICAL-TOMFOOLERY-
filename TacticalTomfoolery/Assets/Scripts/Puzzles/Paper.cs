@@ -16,7 +16,9 @@ public class Paper : MonoBehaviour
             transform.rotation = slot.transform.rotation;
             gameObject.GetComponent<OVRGrabbable>().enabled = false;
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            gameObject.GetComponent<Rigidbody>().freezeRotation = true;
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.transform.parent.GetComponent<PaperSystem>().PaperPlaced();
 
 
         }

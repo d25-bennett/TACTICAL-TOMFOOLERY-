@@ -35,7 +35,7 @@ public class KeyScript : MonoBehaviour
         childKey.transform.parent = null;
         childKey.SetActive(true);
 
-        events.SetEvent(EventNames.unlock);
+        events.PickUpKey();
     }
 
     private IEnumerator UnlockDoor(float waitTime)
@@ -46,6 +46,6 @@ public class KeyScript : MonoBehaviour
         Rigidbody deskDoorRigi = deskDoor.GetComponent<Rigidbody>();
         deskDoorRigi.freezeRotation = false;
         deskDoorRigi.AddForce(0, 0, -2, ForceMode.Impulse);
-        events.SetEvent(EventNames.vhs);
+        events.UnlockedDraw();
     }
 }

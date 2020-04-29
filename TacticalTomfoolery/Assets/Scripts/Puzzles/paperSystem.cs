@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class paperSystem : MonoBehaviour
+public class PaperSystem : MonoBehaviour
 {
     private GameObject[] paper;
+    private int picesSlotted = 0;
+    public EventManager events;
+
 
     void Start()
     {
         paper = new GameObject[transform.childCount];
-    //    for (int i = 0; i < transform.childCount; i++)
-     //   {
-     //       paper[i].SetActive(true);
-     //   }
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            paper[i] = transform.GetChild(i).gameObject;
+            paper[i].SetActive(false);
+        }
    
 
 
     }
    
-    public void SpawnPaper1()
+    public void SpawnCupboardPaper()
     {
         paper[0].SetActive(true);
 
@@ -36,5 +40,19 @@ public class paperSystem : MonoBehaviour
         paper[4].SetActive(true);
     }
 
+    public void PaperPlaced()
+    {
+
+        picesSlotted++;
+
+        if (picesSlotted == 3)
+        {
+            events.EndVoice();
+        }
+        else if (picesSlotted == 1)
+        {
+            events.PickUpPaper();
+        }
+    }
   
 }
