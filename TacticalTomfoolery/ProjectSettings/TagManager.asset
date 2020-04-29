@@ -12,6 +12,7 @@ TagManager:
   - no
   - yes
   - key
+  - clipboard
   layers:
   - Default
   - TransparentFX

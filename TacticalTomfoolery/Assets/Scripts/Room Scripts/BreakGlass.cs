@@ -13,6 +13,10 @@ public class BreakGlass : MonoBehaviour
 	{
 		if (other.tag == "bullet" && !broken)
 		{
+            if (window)
+            {
+                events.WindowBreak();
+            }
 			Instantiate(brokenGlass, transform.position, transform.rotation);			
 			Destroy(gameObject);
 			broken = true;
@@ -23,7 +27,11 @@ public class BreakGlass : MonoBehaviour
 	{
 		if (other.tag == "bullet" && !broken)
 		{
-			Instantiate(brokenGlass, transform.position, transform.rotation);
+            if (window)
+            {
+                events.WindowBreak();
+            }
+            Instantiate(brokenGlass, transform.position, transform.rotation);
 			Destroy(gameObject);
 			broken = true;
 		}

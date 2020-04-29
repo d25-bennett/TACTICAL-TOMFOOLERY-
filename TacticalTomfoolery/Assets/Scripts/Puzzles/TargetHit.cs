@@ -30,6 +30,7 @@ public class TargetHit : MonoBehaviour
         hit = true;
         targetLightObj.SetActive(false);
         this.transform.parent.GetComponent<TargetSystem>().curTargetHit();
+        gameObject.SetActive(false);
     }
 
 }
