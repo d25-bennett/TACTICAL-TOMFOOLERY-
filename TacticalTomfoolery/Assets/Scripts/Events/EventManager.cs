@@ -42,6 +42,7 @@ public class EventManager : MonoBehaviour
 	public Phone _phone;
 	public GameObject VHS;
     public TargetSystem _targets;
+    public PaperSystem _paper;
 
 
     // Start is called before the first frame update
@@ -148,15 +149,17 @@ public class EventManager : MonoBehaviour
 	// Unlocked the door
 	public void UnlockedDraw()
 	{
-		SetEvent(EventNames.vhs);
+        _paper.SpawnCupboardPaper();
+        SetEvent(EventNames.vhs);
         // Change clipboard textures to cipher 
 	}
 
 	// Placed VHS tape in cassette player
 	public void TurnOnTV()
 	{
-		VHS.SetActive(true);
-	}
+        _paper.SpawnVHSPaper();
+        VHS.SetActive(true);
+    }
 
 	// Picked up one of the puzzle pieces
 	public void PickUpPaper()
@@ -168,8 +171,10 @@ public class EventManager : MonoBehaviour
 	// Shot all of the targets
 	public void DestroyedTargets()
 	{
+        _paper.SpawnTargetPaper();
         SetEvent(EventNames.pieces);
-	}
+ 
+    }
 
 	// Placed all of the correct pieces on clipboard
 	public void EndVoice()
