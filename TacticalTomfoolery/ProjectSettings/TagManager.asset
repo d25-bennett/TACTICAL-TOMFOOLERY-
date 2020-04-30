@@ -4,10 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - wall
+  - coin
   - boom
   - bullet
   - vhsplayer
+  - no
+  - yes
   - key
+  - clipboard
   layers:
   - Default
   - TransparentFX
@@ -17,9 +22,9 @@ TagManager:
   - UI
   - 
   - 
-  - Grabbable
-  - Player
-  - Level
+  - 
+  - 
+  - 
   - 
   - 
   - 
