@@ -18,6 +18,7 @@ public class PaperSystem : MonoBehaviour
             paper[i] = transform.GetChild(i).gameObject;
             paper[i].SetActive(false);
         }
+
     }
    
     public void SpawnCupboardPaper()

@@ -92,6 +92,7 @@ public class EventManager : MonoBehaviour
 		creditsLight.intensity = Mathf.Lerp(0, 1, 1);
 		yield return new WaitForSeconds(18);
 		fade.FadeOut();
+        Destroy(_credits);
 		creditsLight.intensity = Mathf.Lerp(1, 0,1);
 		yield return new WaitForSeconds(3);
 		Debug.Log("Application Quit");
