@@ -112,7 +112,7 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
-  m_materialColorField: 
+  m_materialColorField: _OutlineColor
 --- !u!54 &3523326510970256211
 Rigidbody:
   m_ObjectHideFlags: 0
